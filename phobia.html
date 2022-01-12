@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="next">Show next image</button>
+
+<div class="image" style="display: none;"><img src="https://qph.fs.quoracdn.net/main-qimg-0edce36e7426c38d9f4f0b7e6a09c788-c"></div>
+<div class="image" style="display: none;"><img src="https://preview.redd.it/2gcq1l6utdw41.jpg?auto=webp&s=a603bfd29bbcb1b5530487d13c3cc710588db5c4"></div>
+<div class="image" style="display: none;"><img src="https://post.healthline.com/wp-content/uploads/2020/08/1113-Trypophobia-Understanding_Fear_of_Holes-732x549-thumb.jpg"></div>
+<div class="image" style="display: none;"><img src="https://cdn-www.terminix.com/-/media/Feature/Terminix/Articles/m3540106.jpg?rev=bc3bb6d1f386404fb65e1d0f931056fd"></div>
+<div class="image" style="display: none;"><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/trypophobia-honeycomb-1615999502.jpg?crop=1xw:0.8148148148148148xh;center,top&resize=480:*"></div>
+<div class="image" style="display: none;"><img src="https://post.healthline.com/wp-content/uploads/2020/10/1113-Trypophobia-Understanding_Fear_of_Holes-642x361-slide4.jpg"></div>
+
+<script>
+var divs = document.querySelectorAll('.image');
+var button = document.getElementById('next');
+var currentImage = 0;
+const time = [3400,6500, 8000, 5600, 7000, 4000];
+
+button.addEventListener('click', function(){
+    button.style.display = 'inline';
+    divs[currentImage].style.display = 'block';
+    setTimeout(hide, time[currentImage]);
+});
+
+function hide() {
+    button.style.display = 'block';
+    divs[currentImage].style.display = 'none';
+    currentImage = (currentImage + 1) % divs.length;
+}
+</script>
+
+</body>
+</html>
